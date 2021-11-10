@@ -1,0 +1,31 @@
+@import "../../common/color.scss";
+
+
+.unit__outer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.unit__item {
+  max-width: 300px;
+  border-radius: 7px;
+  background: $body-color;
+  color: $font-color;
+  cursor: pointer;
+  transition: all 0.4s;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: all 0.3s;
+  }
+  -webkit-box-shadow: -10px -9px 17px 7px rgba(123, 129, 133, 0.27);
+  -moz-box-shadow: -10px -9px 17px 7px rgba(123, 129, 133, 0.27);
+  box-shadow: -10px -9px 17px 7px rgba(123, 129, 133, 0.27);
+  margin: 10px 10px 10px 10px;
+}
+
+.unit__inner {
+  padding: 10px 10px 10px 10px;
+}
+
