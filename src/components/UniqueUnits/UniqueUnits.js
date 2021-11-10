@@ -60,8 +60,6 @@ const UniqueUnits = () => {
             <p>Description: {discription}</p>
             <p>Age: {age}</p>
             <p>Expansion: {expansion}</p>
-            <p>develops_in: {develops_in}</p>
-            <p>applies_to: {applies_to}</p>
             <p>Build time: {build_time}</p>
           </>
         )}
