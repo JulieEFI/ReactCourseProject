@@ -40,10 +40,10 @@ export const fetchCivilizations = createAsyncThunk( // two arguments: first - st
     initialState,
     reducers: {
       removeSelectedUniqueTech: (state) => {
-        state.uniqueTechs = [];
+        state.uniqueTechs = {};
       },
       removeSelectedUniqueUnit: (state) => {
-        state.uniqueUnits = [];
+        state.uniqueUnits = {};
       },
     },
     extraReducers: {
@@ -52,7 +52,7 @@ export const fetchCivilizations = createAsyncThunk( // two arguments: first - st
       },
       [fetchCivilizations.fulfilled]: (state, action) => {
           console.log('Fetched data!')
-        return {...action.payload};
+        return {...state, ...action.payload};
       },
       [fetchCivilizations.rejected]: () => {
         console.log("Rejected!");

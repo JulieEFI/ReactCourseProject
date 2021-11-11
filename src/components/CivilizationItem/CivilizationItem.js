@@ -12,17 +12,17 @@ const CivilizationItem = (props) => {
       history.push(`/civilizations/unique_tech/:${e.target.id}`);
     }
   }
-  const handleClickToUnith = (e) => {
+  const handleClickToUnit = (e) => {
     if (e.target.tagName === 'BUTTON') {
       history.push(`/civilizations/unique_unit/:${e.target.id}`);
     }
+    
   }
   
-
   return (
     <div className="civilization__outer">
       <div className="civilization__item">
-        <div className="civilization__inner">
+      <div className="civilization__inner">
           <h4>Name: {civilization.name}</h4>
           <p>Expansion: {civilization.expansion}</p>
           <p>Army type: {civilization.army_type}</p>
@@ -33,7 +33,7 @@ const CivilizationItem = (props) => {
         </div>
       </div>
       <button className="button"  id={civilization.id}  onClick={handleClickToTech} >Get unique tech</button>
-      <button className="button" id={civilization.id}  onClick={handleClickToUnith}>Get unique unit</button>
+     <button className="button" id={civilization.id} onClick={handleClickToUnit} >Get unique unit</button>
     </div>
   );
 };

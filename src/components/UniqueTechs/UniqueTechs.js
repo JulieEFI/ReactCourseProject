@@ -1,4 +1,4 @@
-import React, {  useMemo } from "react";
+import React, {  useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 
@@ -19,10 +19,10 @@ function UniqueTechs() {
   console.log('civilizations', dataCivilizations)
 
   const numEl = parseInt(id.match(/\d+/)) - 1;
-  const url = Array.from(dataCivilizations)[numEl].unique_tech;
+  const url = Array.from(dataCivilizations)[numEl]?.unique_tech;
   console.log('url', url)
 
-  useMemo(() => {
+  useEffect(() => {
     dispatch(fetchUniqueTech(url));
     return () => {
       dispatch(removeSelectedUniqueTech());
@@ -30,25 +30,24 @@ function UniqueTechs() {
   }, [dispatch, url]);
 
   const dataUniqueTechs = useSelector(getUniqueTechSelector);
-  console.log('unic',dataUniqueTechs);
+  console.log('dataUniqueTechs',dataUniqueTechs);
 
   const handleclick = () => {
     history.goBack("/civilizations");
   };
-const {name, age, description, expansion, applies_to, develops_in, build_time, cost} = dataUniqueTechs;
 
   return (
     <div className="container-for-unique">
       <div className="container-for-unique__card">
-      <h4>Name: {name}</h4>
-        <p>Age: {age}</p>
-        <p>Description: {description}</p>
-        <p>Expansion: {expansion}</p>
-        <p>Applies to: {applies_to}</p>
-        <p>develops_in: {develops_in}</p>
-        <p>Build time: {build_time}</p>
-        <p>Food: {cost.Food}</p>
-        <p>Gold: {cost.Gold}</p>
+      <h4>Name: {dataUniqueTechs.name}</h4>
+        <p>Age: {dataUniqueTechs.age}</p>
+        <p>Description: {dataUniqueTechs.description}</p>
+        <p>Expansion: {dataUniqueTechs.expansion}</p>
+        <p>Applies to: {dataUniqueTechs.applies_to}</p>
+        <p>develops_in: {dataUniqueTechs.develops_in}</p>
+        <p>Build time: {dataUniqueTechs.build_time}</p>
+        <p>Food: {dataUniqueTechs.cost?.Food}</p>
+        <p>Gold: {dataUniqueTechs.cost?.Gold}</p>
       </div>
       <button className="button" onClick={handleclick}>Go Back</button>
     </div>

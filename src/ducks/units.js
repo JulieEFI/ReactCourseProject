@@ -37,7 +37,7 @@ export const fetchUnits= createAsyncThunk( // two arguments: first - string iden
       },
       [fetchUnits.fulfilled]: (state, action) => {
           console.log('Fetched data!')
-        return {...action.payload};
+        return {...state,...action.payload};
       },
       [fetchUnits.rejected]: () => {
         console.log("Rejected!");

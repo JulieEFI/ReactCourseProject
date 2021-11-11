@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 
@@ -23,9 +23,9 @@ const UniqueUnits = () => {
   console.log(dataCivilizations);
 
   const numEl = parseInt(id.match(/\d+/)) - 1;
-  const url = Array.from(dataCivilizations)[numEl].unique_tech;
+  const url = Array.from(dataCivilizations)[numEl].unique_unit;
 
-  useMemo(() => {
+  useEffect(() => {
     dispatch(fetchUniqueUnit(url));
     return () => {
       dispatch(removeSelectedUniqueUnit());
@@ -33,36 +33,22 @@ const UniqueUnits = () => {
   }, [dispatch, url]);
 
   const dataUniqueUnit = useSelector(getUniqueUnitSelector);
-  console.log(dataUniqueUnit);
+  console.log('dataUniqueUnit',dataUniqueUnit);
 
   const handleclick = () => {
     history.goBack("/civilizations");
   };
 
-  const {
-    name,
-    age,
-    discription,
-    expansion,
-    develops_in,
-    applies_to,
-    build_time,
-  } = dataUniqueUnit;
   
   return (
     <div className="container-for-unique">
       <div className="container-for-unique__card">
-        {Object.keys(dataUniqueUnit).length === 0 ? (
-          <div>...Loading</div>
-        ) : (
-          <>
-            <h4>Name: {name}</h4>
-            <p>Description: {discription}</p>
-            <p>Age: {age}</p>
-            <p>Expansion: {expansion}</p>
-            <p>Build time: {build_time}</p>
-          </>
-        )}
+            <h4>Name: {dataUniqueUnit.name}</h4>
+            <p>Description: {dataUniqueUnit.discription}</p>
+            <p>Age: {dataUniqueUnit.age}</p>
+            <p>Expansion: {dataUniqueUnit.expansion}</p>
+            <p>Build time: {dataUniqueUnit.build_time}</p>
+        
       </div>
       <button className="button" onClick={handleclick}>Go Back</button>
     </div>
