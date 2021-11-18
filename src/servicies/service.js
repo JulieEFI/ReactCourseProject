@@ -13,7 +13,6 @@ class DataService {
   getUnits() {
     return http.get("/units");
   }
-
 }
 
 export default new DataService();

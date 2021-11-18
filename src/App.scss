@@ -1,41 +1,51 @@
 @import "../src/common/color.scss";
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Open Sans"sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans" sans-serif;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 html,
 body {
-    height: auto;
-    background-color: $header-color;
+  height: auto;
+  background-color: $header-color;
+  height: 100vh;
 }
 
-
-
 .App {
-    background: $header-color;
-    text-align: center;
+  background: $header-color;
+  text-align: center;
 }
 
 .container {
-    min-height: 100vh;
-    margin: 0px 40px;
-    background: $header-color;
+  min-height: 100vh;
+  margin: 0px 40px;
+  background: $header-color;
 }
 
-.button {
-    width: 150px;
-    height: 30px;
-    border-radius: 8px;
-    background: rgb(4, 30, 65);
-    background: radial-gradient(circle, rgb(15, 46, 87) 0%, rgba(56, 21, 231, 0.617) 100%);
-    color:darkgrey
+.button,
+button {
+  width: 150px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgb(4, 30, 65);
+  background: radial-gradient(
+    circle,
+    rgb(15, 46, 87) 0%,
+    rgba(56, 21, 231, 0.617) 100%
+  );
+  opacity: 0.7;
+  color: darkgrey;
+}
 
+.button:hover,
+button:hover {
+  opacity: 1;
+  margin: 3px;
 }

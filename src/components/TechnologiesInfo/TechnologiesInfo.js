@@ -11,11 +11,11 @@ const TechnologiesInfo = () => {
   return (
     <div className="technologies__wrapper">
       <div className="technologies__list">
-      <h2>Technologies</h2>
+        <h2>Technologies</h2>
         <div className="technologies__container">
-      {Array.from(technologies).map((technology, index) => {
-        return <TechnologyItem key={index} technology={technology} />
-      })}
+          {Array.from(technologies).map((technology, index) => {
+            return <TechnologyItem key={index} technology={technology} />;
+          })}
         </div>
       </div>
     </div>

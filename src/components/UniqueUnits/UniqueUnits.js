@@ -44,7 +44,6 @@ const UniqueUnits = () => {
     <div className="container-for-unique">
       <div className="container-for-unique__card">
             <h4>Name: {dataUniqueUnit.name}</h4>
-            <p>Description: {dataUniqueUnit.discription}</p>
             <p>Age: {dataUniqueUnit.age}</p>
             <p>Expansion: {dataUniqueUnit.expansion}</p>
             <p>Build time: {dataUniqueUnit.build_time}</p>

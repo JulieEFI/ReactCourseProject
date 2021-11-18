@@ -1,8 +1,8 @@
-import React, { useMemo, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 
-import { fetchUnits, getUnitsSelector, removeSelectedCreatedIn } from "../../ducks/units";
+import { getUnitsSelector, removeSelectedCreatedIn } from "../../ducks/units";
 import { fetchCreatedIn, getCreatedInSelector } from "../../ducks/units";
 import UnitsCreatedInItem from "../UnitsCreatedInItem/UnitsCreatedInItem";
 import { useParams } from "react-router";
@@ -20,7 +20,7 @@ function UnitsCreatedIn() {
   console.log("units", dataUnits);
 
   const numEl = parseInt(id.match(/\d+/)) - 1;
-  const url = Array.from(dataUnits)[numEl].created_in;
+  const url = Array.from(dataUnits)[numEl]?.created_in;
   console.log("url", url);
 
   const handleclick = () => {
@@ -40,12 +40,15 @@ function UnitsCreatedIn() {
   return (
     <>
       <div className="container-created-in">
-      <>
-          {Object.values(dataCreatedIn).map((createdIn, index) => <UnitsCreatedInItem createdIn={createdIn} key={index} />
-          )}
+        <>
+          {Object.values(dataCreatedIn).map((createdIn, index) => (
+            <UnitsCreatedInItem createdIn={createdIn} key={index} />
+          ))}
         </>
       </div>
-      <button className="button" onClick={handleclick}>Go Back</button>
+      <button className="button" onClick={handleclick}>
+        Go Back
+      </button>
     </>
   );
 }

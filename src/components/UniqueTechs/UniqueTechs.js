@@ -1,7 +1,6 @@
 import React, {  useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
-
 import { getCivilizationsSelector, removeSelectedUniqueTech} from "../../ducks/civilizations";
 import {
   fetchUniqueTech,
@@ -39,13 +38,11 @@ function UniqueTechs() {
   return (
     <div className="container-for-unique">
       <div className="container-for-unique__card">
-      <h4>Name: {dataUniqueTechs.name}</h4>
-        <p>Age: {dataUniqueTechs.age}</p>
-        <p>Description: {dataUniqueTechs.description}</p>
-        <p>Expansion: {dataUniqueTechs.expansion}</p>
-        <p>Applies to: {dataUniqueTechs.applies_to}</p>
-        <p>develops_in: {dataUniqueTechs.develops_in}</p>
-        <p>Build time: {dataUniqueTechs.build_time}</p>
+      <h4>Name: {dataUniqueTechs?.name}</h4>
+        <p>Age: {dataUniqueTechs?.age}</p>
+        <p>Description: {dataUniqueTechs?.description}</p>
+        <p>Expansion: {dataUniqueTechs?.expansion}</p>
+        <p>Build time: {dataUniqueTechs?.build_time}</p>
         <p>Food: {dataUniqueTechs.cost?.Food}</p>
         <p>Gold: {dataUniqueTechs.cost?.Gold}</p>
       </div>

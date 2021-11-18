@@ -10,9 +10,9 @@ const TechnologyItem = (props) => {
                 <p>Expansion: {technology.expansion}</p>    
                 <p>Age: {technology.age}</p>
                 <p>Build time: {technology.build_time}</p>
-                <p>Food: {technology.cost.Food}</p>
-                <p>Gold: {technology.cost.Gold}</p>
-                <p>Wood: {technology.cost.Wood}</p>
+                <p>Food: {technology.cost?.Food}</p>
+                <p>Gold: {technology.cost?.Gold}</p>
+                <p>Wood: {technology.cost?.Wood}</p>
                
           </div>
       </div>

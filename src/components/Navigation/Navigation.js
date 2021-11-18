@@ -11,7 +11,7 @@ import { Carousel } from 'react-bootstrap';
 //slidesPlugin(2)
 const Navigation = () => {
   return (
-    <Carousel className="home__navigation" slide={false} fade={false} pause={false}>
+    <Carousel className="home__navigation" slide={false} fade={false} pause={"hover"} data-pause="false">
       <Carousel.Item interval={6000}>
         <Link to="/civilizations">
           <img className="d-block w-100" src={civilization} alt="Civilizations"></img>
